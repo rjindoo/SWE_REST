@@ -12,8 +12,15 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-    const {name, age} = req.body;
-    res.send({"response": "hello"})
+    const data = req.body;
+    console.log(data)
+    let x = Math.random()
+    if(x > 0.5) {
+        res.send({"result": "True"})
+    }
+    else {
+        res.send({"result": "False"})
+    }
 })
 
 app.listen(8080, () => {

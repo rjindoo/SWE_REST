@@ -6,12 +6,11 @@ router.get('/', (req, res) => {
     res.send('Home')
 })
 
-router.get('/again', (req, res) => {
-    res.send('Home again')
-})
 
 router.post('/', (req, res) => {
     const data = req.body
+    console.log(data)
+    // Sending request to Backend
     fetch('http://localhost:8080/', {
         method: 'POST',
         headers: {
@@ -23,5 +22,7 @@ router.post('/', (req, res) => {
         .then(data => res.json(data));
         
 })
+
+
 
 module.exports = router;
